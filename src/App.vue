@@ -38,14 +38,11 @@
               class="fill-height"
               fluid
       >
-        <v-row
-                align="center"
-                justify="center"
-        >
-          <v-col  align="center"
-                  justify="center">
+        <v-row>
+          <v-col >
             <welcome></welcome>
             <about-me></about-me>
+            <history></history>
           </v-col>
         </v-row>
       </v-container>
@@ -60,9 +57,11 @@
 <script>
   import Welcome from "@/components/Welcome";
   import AboutMe from "@/components/AboutMe";
+  import History from "@/components/History";
   export default {
     name: "App",
     components: {
+      History,
       AboutMe,
       Welcome
     },
