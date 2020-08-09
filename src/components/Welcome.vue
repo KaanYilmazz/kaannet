@@ -1,18 +1,59 @@
 <template>
-    <v-container>
-        <v-row>
-            <v-col align="center" cols="7">
-                <h5 style="color: darkgrey">HELLO, MY NAME IS</h5>
-                <h1>KAAN YILMAZ</h1>
-                <p style="color: bisque;  font-family: 'Lucida Console' ">I'm a software engineer and i code stuff, go
-                    check out my CV.</p>
-                <v-btn color="lime">Download CV</v-btn>
-            </v-col>
-            <v-col cols="5">
-                <v-img height="500" src="../img/mee.png" aspect-ratio="1.7" contain></v-img>
-            </v-col>
-        </v-row>
-    </v-container>
+    <v-row>
+        <v-col>
+            <v-card
+                    class="mx-auto"
+            >
+                <v-toolbar
+                        color="#F50057"
+                        dark
+                >
+                    <v-toolbar-title>ABOUT ME</v-toolbar-title>
+                    <v-spacer></v-spacer>
+                </v-toolbar>
+                <v-card-text>
+                    <v-row>
+                        <v-col md="3">
+                            <v-img height="200" src="../img/mee.jpg" aspect-ratio="1.7" contain></v-img>
+                        </v-col>
+                        <v-col md="2">
+                            <v-btn class="mt-16" tile outlined color="success">
+                                <v-icon left>mdi-download</v-icon> Download CV
+                            </v-btn>
+                        </v-col>
+                        <v-col md="7">
+                            <v-simple-table>
+                                <template v-slot:default>
+                                    <tbody>
+                                    <tr>
+                                        <td>Job</td>
+                                        <td>Software Engineer</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Full Name</td>
+                                        <td>Kaan Yılmaz </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>kaanyilmaz.software@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone</td>
+                                        <td><a href="tel:+90-505-781-64-31">+90 505 781 64 31</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adress</td>
+                                        <td>167, 113/16 Street , Erzene/Bornova/İzmir - Turkey</td>
+                                    </tr>
+                                    </tbody>
+                                </template>
+                            </v-simple-table>
+                        </v-col>
+                    </v-row>
+                </v-card-text>
+            </v-card>
+        </v-col>
+    </v-row>
 </template>
 
 <script>
@@ -20,3 +61,4 @@
         name: 'Welcome',
     }
 </script>
+

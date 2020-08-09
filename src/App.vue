@@ -26,12 +26,12 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
+    <v-app-bar color="secondary"
             app
             clipped-left
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title style="color:red">Kaan Yılmaz</v-toolbar-title>
+      <v-toolbar-title style="color:#F50057">Kaan Yılmaz</v-toolbar-title>
     </v-app-bar>
     <v-main>
       <v-container
@@ -43,6 +43,7 @@
             <welcome></welcome>
             <about-me></about-me>
             <history></history>
+            <portfolio></portfolio>
           </v-col>
         </v-row>
       </v-container>
@@ -58,9 +59,11 @@
   import Welcome from "@/components/Welcome";
   import AboutMe from "@/components/AboutMe";
   import History from "@/components/History";
+  import Portfolio from  "@/components/Portfolio"
   export default {
     name: "App",
     components: {
+      Portfolio,
       History,
       AboutMe,
       Welcome
@@ -72,7 +75,7 @@
       drawer: null,
     }),
     created () {
-      this.$vuetify.theme.dark = true
+      this.$vuetify.theme.dark = false
     },
   }
   // <vue-particles color="#dedede"></vue-particles>
