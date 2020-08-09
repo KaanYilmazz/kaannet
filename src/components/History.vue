@@ -8,7 +8,7 @@
                         color="#EF6C00"
                         dark
                 >
-                    <v-toolbar-title>EDUCATION AND EXPERINCE</v-toolbar-title>
+                    <v-toolbar-title>EDUCATION AND EXPERIENCE</v-toolbar-title>
                     <v-spacer></v-spacer>
                 </v-toolbar>
                 <v-card-text>

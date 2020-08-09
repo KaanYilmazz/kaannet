@@ -12,7 +12,7 @@
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Dashboard</v-list-item-title>
+            <v-list-item-title>About Me</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
@@ -20,7 +20,31 @@
             <v-icon>mdi-cog</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Settings</v-list-item-title>
+            <v-list-item-title>My Skills</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-cog</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Education and Experience</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-cog</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Portfolio</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-cog</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Contact</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -44,12 +68,14 @@
             <about-me></about-me>
             <history></history>
             <portfolio></portfolio>
+            <contact></contact>
           </v-col>
         </v-row>
       </v-container>
     </v-main>
 
     <v-footer app>
+      Kaan Yılmaz
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
@@ -60,13 +86,15 @@
   import AboutMe from "@/components/AboutMe";
   import History from "@/components/History";
   import Portfolio from  "@/components/Portfolio"
+  import Contact from  "@/components/Contact"
   export default {
     name: "App",
     components: {
       Portfolio,
       History,
       AboutMe,
-      Welcome
+      Welcome,
+      Contact
     },
     props: {
       source: String,
