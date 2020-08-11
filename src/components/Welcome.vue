@@ -14,12 +14,13 @@
                 <v-card-text>
                     <v-row>
                         <v-col md="3">
-                            <v-img height="200" src="../img/mee.jpg" aspect-ratio="1.7" contain></v-img>
+                            <v-img class="ma-5" height="220" src="../img/mee.jpg" aspect-ratio="1.7" contain></v-img>
                         </v-col>
                         <v-col md="2">
-                            <v-btn class="mt-16" tile outlined color="success">
+                            <p style="align-items: center; justify-content: center; display: flex; height: 17em">
+                            <v-btn tile outlined color="success">
                                 <v-icon left>mdi-download</v-icon> Download CV
-                            </v-btn>
+                            </v-btn></p>
                         </v-col>
                         <v-col md="7">
                             <v-simple-table>

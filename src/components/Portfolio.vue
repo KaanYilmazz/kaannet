@@ -24,7 +24,7 @@
                                             class="mx-0"
                                             target="_blank"
                                             outlined
-                                    ><v-icon>mdi-web</v-icon></v-btn>
+                                    ><v-icon>mdi-alert</v-icon></v-btn>
                                 </v-toolbar>
                                 <v-card-title>Private Solution Website</v-card-title>
                                 <v-card-subtitle>Vue.js, Node.Js, Mysql, Typescript, Vuetify</v-card-subtitle>
@@ -46,7 +46,7 @@
                                             class="mx-0"
                                             target="_blank"
                                             outlined
-                                    ><v-icon>mdi-web</v-icon></v-btn>
+                                    ><v-icon >mdi-web</v-icon></v-btn>
                                 </v-toolbar>
                                 <v-card-title>Corporate Website</v-card-title>
                                 <v-card-subtitle>Asp.net</v-card-subtitle>
@@ -59,7 +59,7 @@
                         <v-col md="3">
                             <v-card>
                                 <v-toolbar color="primary">
-                                    <v-toolbar-title style="color: white">Ege Aktif Filtre</v-toolbar-title>
+                                    <v-toolbar-title style="color: white">Ege Aktif Filter</v-toolbar-title>
                                     <v-spacer></v-spacer>
                                     <v-btn
                                             href="http://autotechnikfilter.com/"
