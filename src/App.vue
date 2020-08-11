@@ -48,10 +48,26 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <v-bottom-navigation class="my-4">x</v-bottom-navigation>
-      <v-bottom-navigation class="my-4">x</v-bottom-navigation>
-      <v-bottom-navigation class="my-4">x</v-bottom-navigation>
-      <v-bottom-navigation class="my-4">x</v-bottom-navigation>
+<v-col>
+        <v-btn
+              href="https://portal.uyumsoft.com.tr/Giris?ReturnUrl=%2f"
+              color="blue"
+              small
+              class="mx-0"
+              target="_blank"
+              outlined
+              icon
+      ><v-icon>mdi-facebook</v-icon></v-btn><br><br>
+        <v-btn
+                href="https://portal.uyumsoft.com.tr/Giris?ReturnUrl=%2f"
+                color="blue"
+                small
+                class="mx-0"
+                target="_blank"
+                outlined
+                icon
+        ><v-icon>mdi-facebook</v-icon></v-btn>
+</v-col>
     </v-navigation-drawer>
 
     <v-app-bar color="secondary"
