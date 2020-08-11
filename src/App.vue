@@ -9,7 +9,7 @@
       <v-list dense>
         <v-list-item link>
           <v-list-item-action>
-            <v-icon>mdi-view-dashboard</v-icon>
+            <v-icon>mdi-badge-account-horizontal</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>About Me</v-list-item-title>
@@ -17,7 +17,7 @@
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
-            <v-icon>mdi-cog</v-icon>
+            <v-icon>mdi-account-hard-hat</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>My Skills</v-list-item-title>
@@ -25,7 +25,7 @@
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
-            <v-icon>mdi-cog</v-icon>
+            <v-icon>mdi-school</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Education and Experience</v-list-item-title>
@@ -33,7 +33,7 @@
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
-            <v-icon>mdi-cog</v-icon>
+            <v-icon>mdi-desk-lamp</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Portfolio</v-list-item-title>
@@ -41,13 +41,17 @@
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
-            <v-icon>mdi-cog</v-icon>
+            <v-icon>mdi-phone-in-talk</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Contact</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <v-bottom-navigation class="my-4">x</v-bottom-navigation>
+      <v-bottom-navigation class="my-4">x</v-bottom-navigation>
+      <v-bottom-navigation class="my-4">x</v-bottom-navigation>
+      <v-bottom-navigation class="my-4">x</v-bottom-navigation>
     </v-navigation-drawer>
 
     <v-app-bar color="secondary"
@@ -55,7 +59,7 @@
             clipped-left
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title style="color:#F50057">Kaan Yılmaz</v-toolbar-title>
+      <v-toolbar-title style="color:#F50057; font-size: x-large; font-family: 'Comic Sans MS'">Kaan Yılmaz</v-toolbar-title>
     </v-app-bar>
     <v-main>
       <v-container
