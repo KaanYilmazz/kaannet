@@ -102,24 +102,16 @@
                    clipped-left
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title style="color:#F50057; font-size: x-large; font-family: 'Comic Sans MS'">Kaan Yılmaz
-            </v-toolbar-title>
+            <v-toolbar color="secondary">
+            <v-toolbar-title style="color:#F50057; font-size: x-large; font-family: 'Comic Sans MS'"> Kaan Yılmaz
+            </v-toolbar-title><v-spacer></v-spacer>
+                <img @click="goHome" class="mr-3" height="40"  src="../src/img/Kaan.png"/>
+            </v-toolbar>
         </v-app-bar>
         <v-main>
-            <v-container
-                    class="fill-height"
-                    fluid
-            >
-                <v-row>
-                    <v-col>
-                        <welcome id="aboutme"></welcome>
-                        <about-me id="skills"></about-me>
-                        <history id="history"></history>
-                        <portfolio id="portfolio"></portfolio>
-                        <contact id="contact"></contact>
-                    </v-col>
-                </v-row>
-            </v-container>
+
+            <router-view></router-view>
+
         </v-main>
 
         <v-footer app>
@@ -130,21 +122,10 @@
 </template>
 
 <script>
-    import Welcome from "@/components/Welcome";
-    import AboutMe from "@/components/AboutMe";
-    import History from "@/components/History";
-    import Portfolio from "@/components/Portfolio"
-    import Contact from "@/components/Contact"
+
 
     export default {
         name: "App",
-        components: {
-            Portfolio,
-            History,
-            AboutMe,
-            Welcome,
-            Contact
-        },
         props: {
             source: String,
         },
@@ -154,13 +135,21 @@
         created() {
             this.$vuetify.theme.dark = false
         },
-        methods:
-        {
-            Goo:function(prm){
-                console.log("parametre :",prm)
-                document.getElementById(prm)?.scrollIntoView({behavior:'smooth', inline:'start'})
+        methods:{
+            goHome:function () {
+                this.$router.push('/');
+            },
+            Goo: function (prm) {
+                console.log("suan nelerin var :D",this.$router)
+                if(this.$router.history.current.path==="/me")
+                {
+                    this.$router.push("/");
+                }
+                document.getElementById(prm)?.scrollIntoView({behavior: 'smooth', inline: 'start'})
+            }
         }
-        }
+
+
     }
     // <vue-particles color="#dedede"></vue-particles>
 </script>

@@ -10,6 +10,9 @@
                 >
                     <v-toolbar-title>ABOUT ME</v-toolbar-title>
                     <v-spacer></v-spacer>
+                    <v-btn color="yellow" @click="goMe" icon>
+                        <v-icon>mdi-account-heart</v-icon>
+                    </v-btn>
                 </v-toolbar>
                 <v-card-text>
                     <v-row>
@@ -18,7 +21,7 @@
                         </v-col>
                         <v-col md="2">
                             <p style="align-items: center; justify-content: center; display: flex; height: 17em">
-                            <v-btn tile outlined color="success">
+                            <v-btn href="https://www.dropbox.com/s/1lrjiey88z9x6rc/KaanEn.pdf?dl=0"  target="_blank" tile outlined color="success">
                                 <v-icon left>mdi-download</v-icon> Download CV
                             </v-btn></p>
                         </v-col>
@@ -60,6 +63,12 @@
 <script>
     export default {
         name: 'Welcome',
+        methods:
+            {
+                goMe:function () {
+                    this.$router.push('/me');
+                }
+            }
     }
 </script>
 

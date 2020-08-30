@@ -9,10 +9,9 @@
                         dark
                 >
                     <v-toolbar-title>MY SKILLS</v-toolbar-title>
-                    <v-spacer></v-spacer>
                 </v-toolbar>
                 <v-card-text>
-                    <p style="font-family: 'Lucida Console' ">More than one and a half years of experience
+                    <p style="font-family: 'Lucida Console' ">More than two years of experience
                         and developed projects in
                         various technologies and active git usage. Quite interested in selfimprovement..
                     </p>
@@ -146,6 +145,7 @@
 <script>
     export default {
         name: 'AboutMe',
+
     }
 </script>
 
