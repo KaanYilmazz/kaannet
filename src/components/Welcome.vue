@@ -9,10 +9,6 @@
                         dark
                 >
                     <v-toolbar-title>ABOUT ME</v-toolbar-title>
-                    <v-spacer></v-spacer>
-                    <v-btn color="yellow" @click="goMe" icon>
-                        <v-icon>mdi-account-heart</v-icon>
-                    </v-btn>
                 </v-toolbar>
                 <v-card-text>
                     <v-row>
@@ -65,9 +61,7 @@
         name: 'Welcome',
         methods:
             {
-                goMe:function () {
-                    this.$router.push('/me');
-                }
+
             }
     }
 </script>

@@ -103,9 +103,20 @@
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar color="secondary">
-            <v-toolbar-title style="color:#F50057; font-size: x-large; font-family: 'Comic Sans MS'"> Kaan Yılmaz
-            </v-toolbar-title><v-spacer></v-spacer>
                 <img @click="goHome" class="mr-3" height="40"  src="../src/img/Kaan.png"/>
+            <v-toolbar-title style="color:#F50057; font-size: x-large; font-family: 'Comic Sans MS'"> aan Yılmaz
+            </v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-btn color="yellow" @click="goHome" icon>
+                    <v-icon>mdi-home</v-icon>
+                </v-btn>
+                <v-btn color="yellow" @click="goMe" icon>
+                    <v-icon>mdi-heart</v-icon>
+                </v-btn>
+                <v-btn color="yellow" @click="goPotential" icon>
+                    <v-icon>mdi-calendar-text</v-icon>
+                </v-btn>
+
             </v-toolbar>
         </v-app-bar>
         <v-main>
@@ -136,6 +147,12 @@
             this.$vuetify.theme.dark = false
         },
         methods:{
+            goMe:function () {
+                this.$router.push('/me');
+            },
+            goPotential:function () {
+                this.$router.push('/potential');
+            },
             goHome:function () {
                 this.$router.push('/');
             },

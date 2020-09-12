@@ -1,12 +1,14 @@
 <template>
     <div>
-        <h1>Transform potential into reality through ethical decisions</h1>
+        <calender></calender>
     </div>
 </template>
 
 <script>
+    import Calender from "@/subcomponents/Calender";
     export default {
-        name: "Potential"
+        name: "Potential",
+        components: {Calender}
     }
 </script>
 

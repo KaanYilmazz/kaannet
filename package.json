@@ -10,6 +10,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-loader": "^14.2.4",
+    "vue-property-decorator": "^9.0.0",
     "vue-router": "^3.4.3",
     "vuetify": "^2.3.6"
   },
