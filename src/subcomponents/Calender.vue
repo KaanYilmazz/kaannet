@@ -42,8 +42,8 @@
     import {Vue} from "vue-property-decorator";
     import {HistoryResponseProvider} from "../services/HistoryResponse";
     export default class Calender extends Vue {
-            weekday = [1, 2, 3, 4, 5, 6, 0]
-            events = HistoryResponseProvider().data
+            weekday = [1, 2, 3, 4, 5, 6, 0];
+            events = HistoryResponseProvider();
 
     }
 </script>
