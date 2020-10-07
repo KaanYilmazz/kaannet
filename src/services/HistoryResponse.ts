@@ -1,7 +1,7 @@
 import {HistoryEntity} from "../entities/History";
 
  class HistoryResponse {
-    data!: HistoryEntity[]
+    data: HistoryEntity[]
 }
 
 export function HistoryResponseProvider(): HistoryResponse {
