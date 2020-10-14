@@ -142,80 +142,80 @@
                 day: 'Day',
                 '4day': '4 Days',
             },
+            pointHistory: [],
             selectedEvent: {},
             selectedElement: null,
             selectedOpen: false,
             events: [],
-            colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
-            names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
         }),
-        mounted () {
-            this.$refs.calendar.checkChange()
+        mounted() {
+            this.pointHistory = this.getHistoryResponse();
+            const events = []
+            for (let item in this.pointHistory) {
+                events.push({
+                    name: this.pointHistory[item].point + " Puan",
+                    start: this.pointHistory[item].day,
+                    color: this.ColorDesider(this.pointHistory[item].point),
+                    timed: true,
+                })
+            }
+            this.events = events;
         },
         methods: {
-            viewDay ({ date }) {
+            ColorDesider(ppoint){
+                if (ppoint>0){
+                    return "'#000000'"
+                }
+                if (ppoint>42){
+                    return "'#B71C1C'"
+                }
+                if (ppoint>54){
+                    return "'#FB8C00'"
+                }
+                if (ppoint>66){
+                    return "'#FFEB3B'"
+                }
+                if (ppoint>78){
+                    return "'#76FF03'"
+                }
+                if (ppoint>90){
+                    return "'#1B5E20'"
+                }
+            },
+            viewDay({date}) {
                 this.focus = date
                 this.type = 'day'
             },
-            getEventColor (event) {
-                return event.color
-            },
-            setToday () {
+            setToday() {
                 this.focus = ''
             },
-            prev () {
+            prev() {
                 this.$refs.calendar.prev()
             },
-            next () {
+            next() {
                 this.$refs.calendar.next()
             },
-            showEvent ({ nativeEvent, event }) {
-                const open = () => {
-                    this.selectedEvent = event
-                    this.selectedElement = nativeEvent.target
-                    setTimeout(() => {
-                        this.selectedOpen = true
-                    }, 10)
-                }
 
-                if (this.selectedOpen) {
-                    this.selectedOpen = false
-                    setTimeout(open, 10)
-                } else {
-                    open()
-                }
-
-                nativeEvent.stopPropagation()
-            },
-            updateRange ({ start, end }) {
-                const events = []
-
-                const min = new Date(`${start.date}T00:00:00`)
-                const max = new Date(`${end.date}T23:59:59`)
-                const days = (max.getTime() - min.getTime()) / 86400000
-                const eventCount = this.rnd(days, days + 20)
-
-                for (let i = 0; i < eventCount; i++) {
-                    const allDay = this.rnd(0, 3) === 0
-                    const firstTimestamp = this.rnd(min.getTime(), max.getTime())
-                    const first = new Date(firstTimestamp - (firstTimestamp % 900000))
-                    const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
-                    const second = new Date(first.getTime() + secondTimestamp)
-
-                    events.push({
-                        name: this.names[this.rnd(0, this.names.length - 1)],
-                        start: first,
-                        end: second,
-                        color: this.colors[this.rnd(0, this.colors.length - 1)],
-                        timed: !allDay,
-                    })
-                }
-
-                this.events = events
-            },
-            rnd (a, b) {
-                return Math.floor((b - a + 1) * Math.random()) + a
-            },
+            getHistoryResponse() {
+                let pointHistoryResponse = [
+                    {
+                        id: 1,
+                        point: 85,
+                        day: new Date("2020-10-13")
+                    },
+                    {
+                        id: 2,
+                        point: 75,
+                        day: new Date("2020-10-14")
+                    },
+                    {
+                        id: 3,
+                        point: 93,
+                        day: new Date("2020-10-15")
+                    },
+                ];
+                return pointHistoryResponse;
+            }
         },
     }
 </script>
