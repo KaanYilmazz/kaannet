@@ -1,10 +1,11 @@
 <template>
-
     <v-app id="inspire">
         <v-navigation-drawer
                 v-model="drawer"
                 app
                 clipped
+                dark
+                src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/691140d9-c746-4028-9319-1d8998a5d523/liverpool-fc-2020-21-home-and-football-kit-DTW55n.jpg"
         >
             <v-list dense>
                 <v-list-item link @click="Goo('aboutme')">
@@ -52,7 +53,7 @@
             <v-col>
                 <v-btn
                         href="https://www.facebook.com/goodbyEfreeman"
-                        color="blue"
+                        color="white"
                         small
                         class="mx-3"
                         target="_blank"
@@ -63,7 +64,7 @@
                 </v-btn>
                 <v-btn
                         href="https://www.instagram.com/socialkaan/?hl=tr"
-                        color="red"
+                        color="white"
                         small
                         class="mx-3"
                         target="_blank"
@@ -74,7 +75,7 @@
                 </v-btn>
                 <v-btn
                         href="https://www.linkedin.com/in/kaan-yilmaz-9b12b714a/"
-                        color="blue"
+                        color="white"
                         small
                         class="mx-3"
                         target="_blank"
@@ -85,7 +86,7 @@
                 </v-btn>
                 <v-btn
                         href="https://github.com/KaanYilmazz/"
-                        color="#424242"
+                        color="white"
                         small
                         class="mx-3"
                         target="_blank"
@@ -97,27 +98,24 @@
             </v-col>
         </v-navigation-drawer>
 
-        <v-app-bar color="secondary"
+        <v-app-bar color="red darken-4"
                    app
                    clipped-left
         >
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar color="secondary">
-                <img @click="goHome" class="mr-3" height="40"  src="../src/img/Kaan.png"/>
-            <v-toolbar-title style="color:#F50057; font-size: x-large; font-family: 'Comic Sans MS'"> aan Yılmaz
-            </v-toolbar-title>
+
+                <img @click="goHome" class="mr-3" height="40"  src="../src/img/Kaan2.png"/>
+            <v-spacer></v-spacer><h1 style="color:white; font-size: x-large; font-family: 'Cooper Std Black'">22. KAAN YILMAZ</h1>
                 <v-spacer></v-spacer>
-                <v-btn color="yellow" @click="goHome" icon>
+                <v-btn color="white" @click="goHome" icon>
                     <v-icon>mdi-home</v-icon>
                 </v-btn>
-                <v-btn color="yellow" @click="goMe" icon>
+                <v-btn color="white" @click="goMe" icon>
                     <v-icon>mdi-heart</v-icon>
                 </v-btn>
-                <v-btn color="yellow" @click="goPotential" icon>
+                <v-btn color="white" @click="goPotential" icon>
                     <v-icon>mdi-calendar-text</v-icon>
                 </v-btn>
 
-            </v-toolbar>
         </v-app-bar>
         <v-main>
 

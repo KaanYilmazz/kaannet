@@ -4,11 +4,19 @@
             fluid
     >
         <v-row>
-            <v-col>
+            <v-col md="6">
                 <welcome id="aboutme"></welcome>
+            </v-col>
+            <v-col md="6">
                 <about-me id="skills"></about-me>
+            </v-col>
+            <v-col md="12">
                 <history id="history"></history>
+            </v-col>
+            <v-col md="12">
                 <portfolio id="portfolio"></portfolio>
+            </v-col>
+            <v-col md="12">
                 <contact id="contact"></contact>
             </v-col>
         </v-row>

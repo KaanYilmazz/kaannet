@@ -1,6 +1,31 @@
 <template>
     <v-row class="fill-height">
+        <v-dialog
+                v-model="dialog"
+                max-width="500px"
+        >
+            <v-card>
+                <v-card-text>
+                    <v-text-field label="File name"></v-text-field>
+
+                    <small class="grey--text">* This doesn't actually save.</small>
+                </v-card-text>
+
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+
+                    <v-btn
+                            text
+                            color="primary"
+                            @click="dialog = false"
+                    >
+                        Submit
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
         <v-col>
+            <v-card elevation="5" outlined class="ma-4">
             <v-sheet height="64">
                 <v-toolbar
                         flat
@@ -39,38 +64,13 @@
                         {{ $refs.calendar.title }}
                     </v-toolbar-title>
                     <v-spacer></v-spacer>
-                    <v-menu
-                            bottom
-                            right
-                    >
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-btn
-                                    outlined
-                                    color="grey darken-2"
-                                    v-bind="attrs"
-                                    v-on="on"
-                            >
-                                <span>{{ typeToLabel[type] }}</span>
-                                <v-icon right>
-                                    mdi-menu-down
-                                </v-icon>
-                            </v-btn>
-                        </template>
-                        <v-list>
-                            <v-list-item @click="type = 'day'">
-                                <v-list-item-title>Day</v-list-item-title>
-                            </v-list-item>
-                            <v-list-item @click="type = 'week'">
-                                <v-list-item-title>Week</v-list-item-title>
-                            </v-list-item>
-                            <v-list-item @click="type = 'month'">
-                                <v-list-item-title>Month</v-list-item-title>
-                            </v-list-item>
-                            <v-list-item @click="type = '4day'">
-                                <v-list-item-title>4 days</v-list-item-title>
-                            </v-list-item>
-                        </v-list>
-                    </v-menu>
+                    <v-btn
+                            color="purple"
+                            class="ma-2 white--text"
+                            @click="dialog = !dialog"
+                    > Works
+                        <v-icon>mdi-eye</v-icon>
+                    </v-btn>
                 </v-toolbar>
             </v-sheet>
             <v-sheet height="600">
@@ -81,10 +81,6 @@
                         :events="events"
                         :event-color="getEventColor"
                         :type="type"
-                        @click:event="showEvent"
-                        @click:more="viewDay"
-                        @click:date="viewDay"
-                        @change="updateRange"
                 ></v-calendar>
                 <v-menu
                         v-model="selectedOpen"
@@ -128,20 +124,15 @@
                     </v-card>
                 </v-menu>
             </v-sheet>
+            </v-card>
         </v-col>
     </v-row>
 </template>
 <script>
     export default {
         data: () => ({
+            dialog: false,
             focus: '',
-            type: 'month',
-            typeToLabel: {
-                month: 'Month',
-                week: 'Week',
-                day: 'Day',
-                '4day': '4 Days',
-            },
             pointHistory: [],
             selectedEvent: {},
             selectedElement: null,
@@ -156,35 +147,38 @@
                     name: this.pointHistory[item].point + " Puan",
                     start: this.pointHistory[item].day,
                     color: this.ColorDesider(this.pointHistory[item].point),
-                    timed: true,
+                    timed: false,
                 })
             }
+
             this.events = events;
         },
         methods: {
             ColorDesider(ppoint){
+                let color =  "";
                 if (ppoint>0){
-                    return "'#000000'"
+                    color = "#000000"
                 }
                 if (ppoint>42){
-                    return "'#B71C1C'"
+                    color = "#B71C1C"
                 }
                 if (ppoint>54){
-                    return "'#FB8C00'"
+                    color = "#FB8C00"
                 }
                 if (ppoint>66){
-                    return "'#FFEB3B'"
+                    color = "#FDD835"
                 }
                 if (ppoint>78){
-                    return "'#76FF03'"
+                    color = "light-green"
                 }
                 if (ppoint>90){
-                    return "'#1B5E20'"
+                    color = "#1B5E20"
                 }
+                return color;
             },
-            viewDay({date}) {
-                this.focus = date
-                this.type = 'day'
+            getEventColor(event){
+                console.log("ne istiyon benden neeee: ", event.color);
+                return event.color;
             },
             setToday() {
                 this.focus = ''
@@ -212,6 +206,21 @@
                         id: 3,
                         point: 93,
                         day: new Date("2020-10-15")
+                    },
+                    {
+                        id: 4,
+                        point: 15,
+                        day: new Date("2020-10-16")
+                    },
+                    {
+                        id: 5,
+                        point: 45,
+                        day: new Date("2020-10-17")
+                    },
+                    {
+                        id: 6,
+                        point: 55,
+                        day: new Date("2020-10-18")
                     },
                 ];
                 return pointHistoryResponse;
