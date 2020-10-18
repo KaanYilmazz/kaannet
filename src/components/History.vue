@@ -5,7 +5,7 @@
                     class="mx-auto"
             >
                 <v-toolbar
-                        color="#EF6C00"
+                        color="red darken-4"
                         dark
                 >
                     <v-toolbar-title>EDUCATION AND EXPERIENCE</v-toolbar-title>
@@ -32,7 +32,7 @@
                                     <p style="color: black"><b> Used Technologies: {{item.usedtech}}</b> </p>
                                     <v-btn
                                             :href="item.link"
-                                            :color="item.color"
+                                            color="teal"
                                             class="mx-0"
                                             target="_blank"
                                             outlined
@@ -53,7 +53,7 @@
         data: () => ({
             items: [
                 {
-                    color: 'pink darken-1',
+                    color: 'red darken-4',
                     icon: 'mdi-school',
                     title:'Suphi Koyuncuoğlu Anatolian Highschool, İzmir',
                     link:'http://bornovasuphial.meb.k12.tr/',
@@ -62,7 +62,7 @@
                     usedtech: '-',
                 },
                 {
-                    color: 'blue',
+                    color: 'red darken-4',
                     icon: 'mdi-school',
                     title:'Celal Bayar University, Manisa',
                     link:'https://www.mcbu.edu.tr/',
@@ -71,7 +71,7 @@
                     usedtech: 'Basics of everything',
                 },
                 {
-                    color: 'lime darken-2',
+                    color: 'red darken-4',
                     icon: 'mdi-star',
                     title:'Oktilyon Internet Services, İzmir',
                     link:'https://oktilyon.net//',
@@ -80,7 +80,7 @@
                     usedtech: 'C#,Unity',
                 },
                 {
-                    color: 'blue-grey darken-1',
+                    color: 'red darken-4',
                     icon: 'mdi-star',
                     title:'SHA Soft, İzmir',
                     link:'https://shayazilim.com/',

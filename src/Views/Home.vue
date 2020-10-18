@@ -14,7 +14,7 @@
                 <history id="history"></history>
             </v-col>
             <v-col md="12">
-                <portfolio id="portfolio"></portfolio>
+                <my-portfolio id="portofilo"></my-portfolio>
             </v-col>
             <v-col md="12">
                 <contact id="contact"></contact>
@@ -29,10 +29,11 @@
     import AboutMe from "@/components/AboutMe";
     import History from "@/components/History";
     import Contact from "@/components/Contact";
+    import MyPortfolio from "@/components/MyPortfolio";
 
     export default {
         name: "Home",
-        components: {Contact, History, AboutMe, Welcome},
+        components: {MyPortfolio, Contact, History, AboutMe, Welcome},
         methods:
             {
 

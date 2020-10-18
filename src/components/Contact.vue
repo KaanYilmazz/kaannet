@@ -4,8 +4,8 @@
             <v-card
                     class="mx-auto"
             >
-                <v-toolbar
-                        color="#212121"
+                <v-toolbar dense
+                        color="red darken-4"
                         dark
                 >
                     <v-toolbar-title>CONTACT</v-toolbar-title>
@@ -49,8 +49,9 @@
                                     <v-col md="6">
                                         <v-textarea class="mt-10" outlined label="Message"></v-textarea>
                                         <v-btn
-                                                color="success"
+                                                color="teal"
                                                 class="mr-4"
+                                                dark
                                                 @click="validate"
                                         >
                                             SEND

@@ -1,29 +1,6 @@
 <template>
     <v-row class="fill-height">
-        <v-dialog
-                v-model="dialog"
-                max-width="500px"
-        >
-            <v-card>
-                <v-card-text>
-                    <v-text-field label="File name"></v-text-field>
 
-                    <small class="grey--text">* This doesn't actually save.</small>
-                </v-card-text>
-
-                <v-card-actions>
-                    <v-spacer></v-spacer>
-
-                    <v-btn
-                            text
-                            color="primary"
-                            @click="dialog = false"
-                    >
-                        Submit
-                    </v-btn>
-                </v-card-actions>
-            </v-card>
-        </v-dialog>
         <v-col>
             <v-card elevation="5" outlined class="ma-4">
             <v-sheet height="64">
@@ -63,14 +40,6 @@
                     <v-toolbar-title v-if="$refs.calendar">
                         {{ $refs.calendar.title }}
                     </v-toolbar-title>
-                    <v-spacer></v-spacer>
-                    <v-btn
-                            color="purple"
-                            class="ma-2 white--text"
-                            @click="dialog = !dialog"
-                    > Works
-                        <v-icon>mdi-eye</v-icon>
-                    </v-btn>
                 </v-toolbar>
             </v-sheet>
             <v-sheet height="600">

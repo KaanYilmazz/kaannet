@@ -104,7 +104,7 @@
         >
 
                 <img @click="goHome" class="mr-3" height="40"  src="../src/img/Kaan2.png"/>
-            <v-spacer></v-spacer><h1 style="color:white; font-size: x-large; font-family: 'Cooper Std Black'">22. KAAN YILMAZ</h1>
+            <v-spacer></v-spacer><h1 style="color:white; font-size: x-large; font-family: 'Cooper Std Black'">KAAN YILMAZ</h1>
                 <v-spacer></v-spacer>
                 <v-btn color="white" @click="goHome" icon>
                     <v-icon>mdi-home</v-icon>

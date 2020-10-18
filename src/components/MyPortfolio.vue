@@ -5,8 +5,8 @@
                     class="mx-auto"
             >
                 <v-toolbar
-                        color="#009688"
-                        dark
+                        color="red darken-4"
+                        dark dense
                 >
                     <v-toolbar-title>PORTFOLIO</v-toolbar-title>
                     <v-spacer></v-spacer>
@@ -15,7 +15,7 @@
                     <v-row>
                         <v-col md="3">
                             <v-card>
-                                <v-toolbar color="primary">
+                                <v-toolbar color="teal">
                                     <v-toolbar-title style="color: white"> icraproweb.com</v-toolbar-title>
                                     <v-spacer></v-spacer>
                                     <v-btn
@@ -36,7 +36,7 @@
                         </v-col>
                         <v-col md="3">
                             <v-card>
-                                <v-toolbar color="primary">
+                                <v-toolbar color="teal">
                                     <v-toolbar-title style="color: white"> shayazilim.com</v-toolbar-title>
                                     <v-spacer></v-spacer>
                                     <v-btn
@@ -58,7 +58,7 @@
                         </v-col>
                         <v-col md="3">
                             <v-card>
-                                <v-toolbar color="primary">
+                                <v-toolbar color="teal">
                                     <v-toolbar-title style="color: white">Ege Aktif Filter</v-toolbar-title>
                                     <v-spacer></v-spacer>
                                     <v-btn
@@ -80,7 +80,7 @@
                         </v-col>
                         <v-col md="3">
                             <v-card>
-                                <v-toolbar color="primary">
+                                <v-toolbar color="teal">
                                     <v-toolbar-title style="color: white"> Voucher Integration</v-toolbar-title>
                                     <v-spacer></v-spacer>
                                     <v-btn
@@ -108,7 +108,7 @@
 </template>
 <script>
     export default {
-        name: "Portfolio.vue"
+        name: "MyPortfolio.vue"
     }
 </script>
 

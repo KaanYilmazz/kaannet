@@ -1,60 +1,69 @@
 <template>
-    <v-row>
-        <v-col md="7">
-            <v-card
-                    class="mx-auto"
-            >
-                <v-toolbar
-                        color="green"
-                        dark
+    <v-container
+            class="fill-height"
+            fluid
+    >
+        <v-row>
+            <v-col md="7">
+                <v-card
+                        class="mx-auto"
                 >
-                    <v-toolbar-title>MY TOP 10 SONGS</v-toolbar-title>
-                    <v-spacer></v-spacer>
-                    <v-btn target="_blank" color="white" href="https://open.spotify.com/user/2sqfs7h0es04ox9dcsmd7xptr?si=3vV0RI9VSPiaQhwp-10MYw" icon>
-                        <v-icon>mdi-spotify</v-icon>
-                    </v-btn>
-                </v-toolbar>
-                <v-card-text>
-                    <v-data-table
-                            hide-default-footer
-                            :headers="headers"
-                            :items="songs"
-                            class="elevation-1"
-                    ></v-data-table>
-                </v-card-text>
-            </v-card>
-        </v-col>
-        <v-col md="5">
-            <v-card
-                    class="mx-auto"
-            >
-                <v-toolbar
-                        color="#d81b60"
-                        dark
+                    <v-toolbar
+                            color="green"
+                            dark
+                    >
+                        <v-toolbar-title>MY TOP 10 SONGS</v-toolbar-title>
+                        <v-spacer></v-spacer>
+                        <v-btn target="_blank" color="white"
+                               href="https://open.spotify.com/user/2sqfs7h0es04ox9dcsmd7xptr?si=3vV0RI9VSPiaQhwp-10MYw"
+                               icon>
+                            <v-icon>mdi-spotify</v-icon>
+                        </v-btn>
+                    </v-toolbar>
+                    <v-card-text>
+                        <v-data-table
+                                hide-default-footer
+                                :headers="headers"
+                                :items="songs"
+                                class="elevation-1"
+                        ></v-data-table>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+            <v-col md="5">
+                <v-card
+                        class="mx-auto"
                 >
-                    <v-toolbar-title>MY OTHER FAVORITES</v-toolbar-title>
-                </v-toolbar>
-                <v-card-text>
-                    <v-list two-line>
-                        <v-list-item-group
-                                v-model="selected"
-                                multiple
-                                active-class="pink--text"
-                        >
-                            <template v-for="item in items">
-                                <v-list-item :key="item.title">
+                    <v-toolbar
+                            color="#d81b60"
+                            dark
+                    >
+                        <v-toolbar-title>MY OTHER FAVORITES</v-toolbar-title>
+                    </v-toolbar>
+                    <v-card-text>
+                        <v-list two-line>
+                            <v-list-item-group
+                                    v-model="selected"
+                                    multiple
+                                    active-class="pink--text"
+                            >
+                                <template v-for="item in items">
+                                    <v-list-item :key="item.title">
                                         <v-list-item-content>
-                                            <v-list-item-title style="color:#d81b60" v-text="item.question"></v-list-item-title>
-                                            <v-list-item-subtitle class="text--primary" v-text="item.answer"></v-list-item-subtitle>
+                                            <v-list-item-title style="color:#d81b60"
+                                                               v-text="item.question"></v-list-item-title>
+                                            <v-list-item-subtitle class="text--primary"
+                                                                  v-text="item.answer"></v-list-item-subtitle>
                                         </v-list-item-content>
-                                </v-list-item>
-                            </template>
-                        </v-list-item-group>
-                    </v-list>
-                </v-card-text>
-            </v-card>
-        </v-col>
-    </v-row>
+                                    </v-list-item>
+                                </template>
+                            </v-list-item-group>
+                        </v-list>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
@@ -62,11 +71,11 @@
         name: 'Me',
         methods:
             {
-                spotifyList:function () {
+                spotifyList: function () {
                     this.$router.push('/me');
                 }
             },
-        data () {
+        data() {
             return {
                 headers: [
                     {
@@ -75,10 +84,10 @@
                         sortable: false,
                         value: 'no',
                     },
-                    { text: 'Title', value: 'title' },
-                    { text: 'Artist', value: 'artist' },
-                    { text: 'Album', value: 'album' },
-                    { text: 'Length', value: 'length' },
+                    {text: 'Title', value: 'title'},
+                    {text: 'Artist', value: 'artist'},
+                    {text: 'Album', value: 'album'},
+                    {text: 'Length', value: 'length'},
                 ],
                 songs: [
                     {

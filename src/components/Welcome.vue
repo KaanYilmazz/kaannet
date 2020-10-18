@@ -5,23 +5,22 @@
                     class="mx-auto"
             >
                 <v-toolbar
-                        color="#F50057"
-                        dark
+                        color="red darken-4"
+                        dark dense
                 >
-                    <v-toolbar-title>ABOUT ME</v-toolbar-title>
+                    <v-toolbar-title>ABOUT ME</v-toolbar-title><v-spacer></v-spacer>
+                    <img src="../img/tr.png" height="20" width="30"/>
                 </v-toolbar>
                 <v-card-text>
                     <v-row>
-                        <v-col md="3">
-                            <v-img class="ma-5" height="220" src="../img/mee.jpg" aspect-ratio="1.7" contain></v-img>
-                        </v-col>
-                        <v-col md="2">
+                        <v-col md="4">
+                            <v-img class="mx-3" height="120" src="../img/mee.jpg"></v-img>
                             <p style="align-items: center; justify-content: center; display: flex; height: 17em">
-                            <v-btn href="https://www.dropbox.com/s/1lrjiey88z9x6rc/KaanEn.pdf?dl=0"  target="_blank" tile outlined color="success">
+                            <v-btn href="https://www.dropbox.com/s/1lrjiey88z9x6rc/KaanEn.pdf?dl=0"  target="_blank" tile outlined color="teal">
                                 <v-icon left>mdi-download</v-icon> Download CV
                             </v-btn></p>
                         </v-col>
-                        <v-col md="7">
+                        <v-col md="8">
                             <v-simple-table>
                                 <template v-slot:default>
                                     <tbody>
@@ -34,6 +33,10 @@
                                         <td>Kaan Yılmaz </td>
                                     </tr>
                                     <tr>
+                                        <td>Age</td>
+                                        <td>24</td>
+                                    </tr>
+                                    <tr>
                                         <td>Email</td>
                                         <td>kaanyilmaz.software@gmail.com</td>
                                     </tr>
@@ -42,8 +45,8 @@
                                         <td><a href="tel:+90-505-781-64-31">+90 505 781 64 31</a></td>
                                     </tr>
                                     <tr>
-                                        <td>Adress</td>
-                                        <td>167, 113/16 Street , Erzene/Bornova/İzmir - Turkey</td>
+                                        <td>Location</td>
+                                        <td>İzmir - Turkey <v-icon>mdi-turkey</v-icon></td>
                                     </tr>
                                     </tbody>
                                 </template>
