@@ -14,7 +14,7 @@
                 <history id="history"></history>
             </v-col>
             <v-col md="12">
-                <my-portfolio id="portofilo"></my-portfolio>
+                <my-portfolio id="portfolio"></my-portfolio>
             </v-col>
             <v-col md="12">
                 <contact id="contact"></contact>

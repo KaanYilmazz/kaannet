@@ -37,6 +37,8 @@
                     >
                         <v-toolbar-title>TO DO</v-toolbar-title>
                         <v-spacer></v-spacer>
+                        {{remainTime}}
+                        <v-spacer></v-spacer>
                         <v-btn fab small
                                color="teal"
                                class="white--text"
@@ -68,6 +70,7 @@
         name: "DoWork",
         data() {
             return {
+                remainTime:"0",
                 headers: [
                     {
                         text: 'Work',
@@ -126,7 +129,30 @@
                 ],
             }
         },
+        mounted(){
+            setInterval(this.calculateHMSleft,1000);
+        },
+        methods:{
+            calculateHMSleft()
+            {
+                var now = new Date();
+                var hoursleft = 23-now.getHours();
+                var minutesleft = 59-now.getMinutes();
+                var secondsleft = 59-now.getSeconds();
+
+                //format 0 prefixes
+                if(minutesleft<10) minutesleft = "0"+minutesleft;
+                if(secondsleft<10) secondsleft = "0"+secondsleft;
+
+               this.remainTime=hoursleft+":"+minutesleft+":"+secondsleft;
+               if(minutesleft===0&&hoursleft===0&&secondsleft===0)
+               {
+                   //save today
+               }
+            }
+        }
     }
+
 </script>
 
 <style scoped>
