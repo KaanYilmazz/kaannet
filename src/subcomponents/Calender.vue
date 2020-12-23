@@ -98,29 +98,22 @@
     </v-row>
 </template>
 <script>
+    import axios from "axios";
+
     export default {
         data: () => ({
             dialog: false,
             focus: '',
-            pointHistory: [],
+            pointHistory:[],
             selectedEvent: {},
             selectedElement: null,
             selectedOpen: false,
             events: [],
         }),
         mounted() {
-            this.pointHistory = this.getHistoryResponse();
-            const events = []
-            for (let item in this.pointHistory) {
-                events.push({
-                    name: this.pointHistory[item].point + " Puan",
-                    start: this.pointHistory[item].day,
-                    color: this.ColorDesider(this.pointHistory[item].point),
-                    timed: false,
-                })
-            }
+            this.LoadPoints();
+            console.log("when mounted: ",this.pointHistory);
 
-            this.events = events;
         },
         methods: {
             ColorDesider(ppoint){
@@ -158,42 +151,34 @@
             next() {
                 this.$refs.calendar.next()
             },
+            LoadPoints(){
+                axios
+                    .get('https://localhost:44307/api/Points').then(response => {
+                        console.log(response.data);
+                        this.pointHistory = response.data;
+                        this.FillCalendar();
+                    console.log("PH: ",this.pointHistory);
+                    }).catch(e => {
+                    this.errors.push(e)
+                })
 
-            getHistoryResponse() {
-                let pointHistoryResponse = [
-                    {
-                        id: 1,
-                        point: 85,
-                        day: new Date("2020-10-13")
-                    },
-                    {
-                        id: 2,
-                        point: 75,
-                        day: new Date("2020-10-14")
-                    },
-                    {
-                        id: 3,
-                        point: 93,
-                        day: new Date("2020-10-15")
-                    },
-                    {
-                        id: 4,
-                        point: 15,
-                        day: new Date("2020-10-16")
-                    },
-                    {
-                        id: 5,
-                        point: 45,
-                        day: new Date("2020-10-17")
-                    },
-                    {
-                        id: 6,
-                        point: 55,
-                        day: new Date("2020-10-18")
-                    },
-                ];
-                return pointHistoryResponse;
+            },
+            FillCalendar(){
+                const events = []
+                console.log("PH2: ",this.pointHistory);
+                for (let item in this.pointHistory) {
+                    events.push({
+                        name: this.pointHistory[item].totalPoint + " Puan",
+                        start: this.pointHistory[item].history.day,
+                        color: this.ColorDesider(this.pointHistory[item].totalPoint),
+                        timed: false,
+                    })
+                }
+
+                this.events = events;
+                console.log("events:",this.events);
             }
+
         },
     }
 </script>

@@ -36,29 +36,50 @@
                             dark dense
                     >
                         <v-toolbar-title>TO DO</v-toolbar-title>
-                        <v-spacer></v-spacer>
-                        {{remainTime}}
-                        <v-spacer></v-spacer>
-                        <v-btn fab small
-                               color="teal"
-                               class="white--text"
-                               @click="dialog = !dialog"
-                        >
-                            <v-icon>mdi-plus</v-icon>
-                        </v-btn>
                     </v-toolbar>
-                    <v-data-table
-                            :headers="headers"
-                            :items="works"
-                            class="elevation-1"
-                            hide-default-footer
-                    >
-                        <template v-slot:item.done="{ item }">
-                            <v-simple-checkbox
-                                    v-model="item.done"
-                            ></v-simple-checkbox>
-                        </template>
-                    </v-data-table>
+                    <v-row>
+                    <v-col md="9">
+                        <v-text-field class="mx-4" label="Washing Teeths  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Facial Care  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Hair Care  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Working  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Sport  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Projects  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="General Culture  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Bad Habits  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Reading  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="English  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Relationships  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Others  :" readonly solo></v-text-field>
+                        <v-text-field class="mx-4" label="Morale  :" readonly solo></v-text-field>
+                    </v-col>
+                    <v-col md="3">
+                        <v-text-field class="mx-4" v-model="addHistory.WashingTeeths" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.FacialCare" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.HairCare" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.Working" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.Sport" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.Projects" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.GeneralCulture" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.BadHabits" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.Reading" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.English" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.Relationships" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.Others" label="0" solo></v-text-field>
+                        <v-text-field class="mx-4" v-model="addHistory.Morale" label="0" solo></v-text-field>
+                        <v-btn
+                                tile
+                                color="success"
+                        >
+                            <v-icon left>
+                                mdi-send
+                            </v-icon>
+                            Send
+                        </v-btn>
+                    </v-col>
+
+                    </v-row>
+
                 </v-card>
             </v-col>
         </v-row>
@@ -70,7 +91,7 @@
         name: "DoWork",
         data() {
             return {
-                remainTime:"0",
+                remainTime: "0",
                 headers: [
                     {
                         text: 'Work',
@@ -80,76 +101,31 @@
                     {text: 'Point', value: 'point'},
                     {text: 'Done?', value: 'done'},
                 ],
-                works: [
+                addHistory: [
                     {
-                        name: 'Brush the Teeth',
-                        point: 20,
-                        done: true,
-                    },
-                    {
-                        name: 'Do Sport',
-                        point: 40,
-                        done: true,
-                    },
-                    {
-                        name: 'Eat Well',
-                        point: 30,
-                        done: true,
-                    },
-                    {
-                        name: 'Sleep Well',
-                        point: 15,
-                        done: true,
-                    },
-                    {
-                        name: 'Projects',
-                        point: 50,
-                        done: true,
-                    },
-                    {
-                        name: 'Read a Book',
-                        point: 20,
-                        done: true,
-                    },
-                    {
-                        name: 'English Practice',
-                        point: 50,
-                        done: true,
-                    },
-                    {
-                        name: 'Clean Your Room',
-                        point: 15,
-                        done: true,
-                    },
-                    {
-                        name: 'Succesful Day at Work',
-                        point: 35,
-                        done: true,
+                        WashingTeeths:0,
+                        FacialCare: 0,
+                        HairCare: 0,
+                        Working: 0,
+                        HealtyEating:0,
+                        Sport:0,
+                        Projects:0,
+                        GeneralCulture:0,
+                        BadHabits:0,
+                        Reading:0,
+                        English:0,
+                        Relationships:0,
+                        Others:0,
+                        Morale:0
                     },
                 ],
             }
         },
-        mounted(){
-            setInterval(this.calculateHMSleft,1000);
+        mounted() {
+
         },
-        methods:{
-            calculateHMSleft()
-            {
-                var now = new Date();
-                var hoursleft = 23-now.getHours();
-                var minutesleft = 59-now.getMinutes();
-                var secondsleft = 59-now.getSeconds();
+        methods: {
 
-                //format 0 prefixes
-                if(minutesleft<10) minutesleft = "0"+minutesleft;
-                if(secondsleft<10) secondsleft = "0"+secondsleft;
-
-               this.remainTime=hoursleft+":"+minutesleft+":"+secondsleft;
-               if(minutesleft===0&&hoursleft===0&&secondsleft===0)
-               {
-                   //save today
-               }
-            }
         }
     }
 
